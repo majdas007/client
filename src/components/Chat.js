@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import {withRouter} from 'react-router';
-import Artyom from 'artyom.js';
-import ArtyomCommandsManager from './ArtyomCommands.js';
+// import Artyom from 'artyom.js';
+// import ArtyomCommandsManager from './ArtyomCommands.js';
 import axios from '../axios';
-const Jarvis = new Artyom();
+// const Jarvis = new Artyom();
 class Chat extends Component {
     constructor (props, context){
         super(props, context);
 
         // Add `this` context to the handler functions
-        this.startAssistant = this.startAssistant.bind(this);
-        this.stopAssistant = this.stopAssistant.bind(this);
-        this.speakText = this.speakText.bind(this);
-        this.handleTextareaChange = this.handleTextareaChange.bind(this);
+        // this.startAssistant = this.startAssistant.bind(this);
+        // this.stopAssistant = this.stopAssistant.bind(this);
+        // this.speakText = this.speakText.bind(this);
+        // this.handleTextareaChange = this.handleTextareaChange.bind(this);
 
         // Prepare simple state
         this.state = {
@@ -22,14 +22,14 @@ class Chat extends Component {
             posts:[]
         };
 
-        // Load some commands to Artyom using the commands manager
-        let CommandsManager = new ArtyomCommandsManager(Jarvis);
-        CommandsManager.loadCommands();
+        // // Load some commands to Artyom using the commands manager
+        // let CommandsManager = new ArtyomCommandsManager(Jarvis);
+        // CommandsManager.loadCommands();
     }
 
 
 
-    startAssistant() {
+    /*startAssistant() {
         let _this = this;
 
         console.log("Artyom succesfully started !");
@@ -93,7 +93,7 @@ class Chat extends Component {
             textareaValue: event.target.value
         });
     }
-
+*/
     render() {
         return (
             /*<React.Fragment>
@@ -106,11 +106,6 @@ class Chat extends Component {
             <div>
                 <div style={{display:"flex",justifyContent: 'space-around',paddingLeft:"120px",
                     alignContent: "center"}}>
-
-                <img src={require('../assets/img/logo-voicebot.png')}
-                     disabled={this.state.artyomActive} onClick={this.startAssistant}
-                     width="250px" height="250px" ></img>
-
 
                     <div className="botui-app-container" id="api-bot" style={{marginLeft:"300px"}}>
                         <bot-ui></bot-ui>
